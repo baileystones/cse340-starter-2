@@ -4,3 +4,279 @@
 *:after {
   box-sizing: border-box;
 }
+
+/* MOBILE SCREEN */
+html, body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #0d1b1e;
+  background-color: white;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Mobile wrapper */
+#wrapper {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: none;
+}
+
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+header .siteName a {
+  color: #0d1b1e;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+header #tools a {
+  color: #0d1b1e;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+
+/* Nav */
+nav {
+  margin: 0.5rem 0 1rem 0;
+  padding: 0.6rem 0.75rem;
+  background: #1d2430;
+  border-radius: 6px;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+}
+
+nav li {
+  flex: 0 0 auto;
+}
+
+nav a {
+  display: block;
+  color: #ffffff;
+  padding: 0.55rem 0.9rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.013);
+}
+
+
+/* Main content */
+main.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.hero-info {
+  order: 2;
+  padding: 0.25rem 0;
+}
+
+.product-link {
+  color: #0faeb8;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.features-list {
+  padding-left: 1.25rem;
+  margin: 0.4rem 0;
+}
+
+.features-list li {
+  list-style: disc;
+  margin-bottom: 0.25rem;
+}
+
+/* Buttons */
+.btn {
+  background-color: #0faeb8;
+  color: #042022;
+  padding: 0.55rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn.btn-primary {
+  background-color: #f5af47;
+  color: #ffffff;
+}
+
+.hero-image {
+  order: 1;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* Reviews Section*/
+.reviews-list {
+  padding-left: 1.25rem;
+}
+
+.reviews-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Upgrades */
+.upgrades-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+}
+
+.upgrade-item {
+  text-align: center;
+}
+
+.upgrade-tile {
+  display:flex;
+  align-items:center;
+  background-color: #0faeb8;
+  padding: 0.9rem;
+  border-radius: 6px;
+  justify-content:center;
+  height: 140px;
+  overflow: hidden;
+}
+
+.upgrade-tile img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.upgrade-label {
+  display:block;
+  margin-top:0.45rem;
+  font-weight:700;
+  color:#052426;
+  text-decoration: none;
+}
+
+/* Footer */
+footer {
+  margin-top: 1.8rem;
+  padding: 1.2rem 0;
+  text-align: left;
+}
+
+footer .copyright {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #0d1b1e;
+}
+
+/* LARGE SCREEN */
+@media (min-width: 900px) {
+  body {
+    background-image: url('/images/site/checkerboard.jpg');
+    background-repeat: repeat;
+    background-size: 120px 120px;
+  }
+
+  #wrapper {
+    border: 3px solid #0faeb8;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+  }
+
+  /* Hero columns */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .hero-info {
+    background-color: #0faeb8;
+    color: white;
+    padding: 1.6rem;
+    border-radius: 8px;
+  }
+
+  .hero-info h1,
+  .hero-info .product-link,
+  .hero-info .features-list li {
+    color: white;
+  }
+
+  .hero-image {
+    text-align: right;
+  }
+
+  main.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    grid-template-areas:
+      "hero hero"
+      "upgrades reviews";
+  }
+
+  .hero { grid-area: hero; }
+  .upgrades { grid-area: upgrades; }
+  .reviews { grid-area: reviews; }
+
+  .upgrades-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  footer .copyright {
+    color: black;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+  }
+}
