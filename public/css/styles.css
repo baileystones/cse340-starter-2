@@ -107,7 +107,7 @@ main.container {
 }
 
 .product-link {
-  color: #0faeb8;
+  color: #005f66;
   font-weight: 700;
   text-decoration: none;
   display: inline-block;
@@ -140,7 +140,7 @@ main.container {
 }
 
 .btn.btn-primary {
-  background-color: #f5af47;
+  background-color: #d78b2a;
   color: #ffffff;
 }
 
