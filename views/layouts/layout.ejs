@@ -8,6 +8,10 @@
         <%- include('../partials/navigation') %>
 
         <main>
+            <% if (messages()) { %>
+                <%- messages() %>
+            <% } %>
+            
             <%- body %>
         </main>
 
