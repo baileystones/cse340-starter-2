@@ -1,0 +1,15 @@
+<h1><%= title %></h1>
+
+<% if (messages()) { %>
+  <%= messages() %>
+<% } %>
+
+<div class="inventory-management-links">
+  <a href="/inv/add-classification" class="btn btn-primary">
+    Add New Classification
+  </a>
+
+  <a href="/inv/add-inventory" class="btn btn-primary">
+    Add New Inventory Item
+  </a>
+</div>
