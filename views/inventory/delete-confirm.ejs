@@ -1,0 +1,32 @@
+<h1><%= title %></h1>
+
+<p class="notice">
+  Confirm Deletion — This action is permanent and cannot be undone.
+</p>
+
+<form action="/inv/delete" method="post" class="account-form">
+
+  <input type="hidden" name="inv_id" value="<%= inv_id %>">
+
+  <label>
+    Make
+    <input value="<%= inv_make %>" readonly>
+  </label>
+
+  <label>
+    Model
+    <input value="<%= inv_model %>" readonly>
+  </label>
+
+  <label>
+    Year
+    <input value="<%= inv_year %>" readonly>
+  </label>
+
+  <label>
+    Price
+    <input value="<%= inv_price %>" readonly>
+  </label>
+
+  <button type="submit">Delete Vehicle</button>
+</form>

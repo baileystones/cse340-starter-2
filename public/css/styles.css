@@ -356,6 +356,55 @@ footer .copyright {
   cursor: pointer;
 }
 
+/* Inventory Management Table */
+#inventoryDisplay {
+  background-color: #ffffff;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#inventoryDisplay thead {
+  background-color: #1d2430;
+  color: #ffffff;
+}
+
+#inventoryDisplay th,
+#inventoryDisplay td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+#inventoryDisplay th {
+  font-weight: 700;
+}
+
+#inventoryDisplay tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+#inventoryDisplay tbody tr:last-child {
+  border-bottom: none;
+}
+
+#inventoryDisplay tbody tr:hover {
+  background-color: #f4fafa;
+}
+
+/* Action Links */
+#inventoryDisplay a {
+  color: #005f66;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#inventoryDisplay a:hover {
+  text-decoration: underline;
+}
+
 /* LARGE SCREEN */
 @media (min-width: 700px) {
   #inv-display {
