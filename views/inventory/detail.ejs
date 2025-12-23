@@ -1,2 +1,48 @@
 <h1><%= title %></h1>
 <%- detailHTML %>
+
+<h2>Reviews</h2>
+<% if (reviews && reviews.length > 0) { %>
+  <% reviews.forEach(review => { %>
+    <div class="review">
+      <p><%= review.review_text %></p>
+      <p>
+        <strong>
+          <%= review.account_firstname.charAt(0) %><%= review.account_lastname %>
+        </strong>
+      </p>
+    </div>
+  <% }) %>
+<% } else{ %>
+  <p>No reviews yet.</p>
+<% } %>
+
+<% if (locals.loggedin) { %>
+
+<h3>Add a Review</h3>
+
+<form action="/reviews/add" method="post" class="account-form">
+  <textarea
+    name="review_text"
+    required
+    placeholder="Write your review here..."
+  ></textarea>
+
+  <p>
+    Reviewer:
+    <strong>
+      <%= accountData.account_firstname.charAt(0) %><%= accountData.account_lastname %>
+    </strong>
+  </p>
+
+  <input type="hidden" name="inv_id" value="<%= vehicle.inv_id %>">
+  <input type="hidden" name="account_id" value="<%= accountData.account_id %>">
+
+  <button type="submit">Submit Review</button>
+</form>
+
+<% } else { %>
+  <p>
+    <a href="/account/login">Log in</a> to add a review.
+  </p>
+<% } %>

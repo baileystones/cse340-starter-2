@@ -18,6 +18,7 @@ const accountRoute = require("./routes/accountRoute")
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
 const utilities = require("./utilities")
+const reviewRoute = require("./routes/reviewRoute")
 
 /* ***********************
  * Middleware
@@ -64,6 +65,9 @@ app.use("/account", accountRoute)
 
 // Static files
 app.use(static)
+
+// Review routes
+app.use("/reviews", reviewRoute)
 
 /* ***********************
  * Local Server Information

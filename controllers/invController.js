@@ -1,5 +1,6 @@
 const invModel = require("../models/inventory-model")
 const utilities = require("../utilities/")
+const reviewModel = require("../models/review-model")
 
 const invCont = {}
 
@@ -28,11 +29,15 @@ invCont.buildDetail = async function (req, res) {
   const vehicle = await invModel.getInventoryById(inv_id)
   const nav = await utilities.getNav()
   const detailHTML = utilities.buildVehicleDetail(vehicle)
+  const reviewData = await reviewModel.getReviewsByInventoryId(inv_id)
 
   res.render("inventory/detail",{
     title: `${vehicle.inv_make} ${vehicle.inv_model}`,
     nav,
     detailHTML,
+    //Debugged note: vehicle has to be passed now because the review form needs inv_id from it
+    vehicle,
+    reviews: reviewData.rows
   })
 }
 invCont.triggerError = async function () {
